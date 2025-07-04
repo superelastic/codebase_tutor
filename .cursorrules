@@ -1,0 +1,45 @@
+# Cursor Rules for PocketFlow Development
+
+## Project Context
+This is a PocketFlow-based agentic application using Python 3.11+.
+
+## Code Standards
+- Always use type hints for function parameters and returns
+- Write docstrings for all public functions and classes
+- Follow PEP 8 naming conventions
+- Maximum line length: 88 characters (Ruff standard)
+- Use f-strings for string formatting
+
+## PocketFlow Patterns
+When creating nodes:
+1. Inherit from BaseNode
+2. Implement the three-phase lifecycle:
+   - prep(): Validate and prepare
+   - exec(): Core logic (required)
+   - post(): Cleanup and finalize
+3. Set action in store to indicate next transition
+4. Handle errors gracefully
+
+## Testing
+- Write tests for all new functionality
+- Use pytest for testing
+- Aim for high test coverage
+- Test both success and error cases
+
+## Development Workflow
+1. Check existing patterns before implementing
+2. Use UV for package management
+3. Run formatters before committing
+4. Ensure type checking passes
+
+## File Organization
+- Nodes go in src/nodes/
+- Flows go in src/flows/
+- Utilities go in src/utils/
+- One class/concept per file when practical
+
+## Documentation
+- Update relevant docs when changing functionality
+- Use clear, descriptive variable names
+- Comment complex logic
+- Keep README up to date
