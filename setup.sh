@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Claude PocketFlow Template Setup Script
-# This script sets up the development environment for the Claude PocketFlow template
+# Codebase Tutor Setup Script
+# This script sets up the development environment for the Codebase Tutor application
 
 set -e  # Exit on any error
 
-echo "🚀 Setting up Claude PocketFlow Template..."
+echo "🚀 Setting up Codebase Tutor..."
 
 # Check if Python 3.10+ is available
 python_version=$(python3 -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
@@ -47,18 +47,18 @@ uv run pre-commit install
 
 # Create necessary directories
 echo "📁 Creating project structure..."
-mkdir -p src/claude_pocketflow_template
+mkdir -p src/codebase_tutor
 mkdir -p tests
 mkdir -p docs
 mkdir -p .mdc
 
 # Create basic package structure if it doesn't exist
-if [ ! -f "src/claude_pocketflow_template/__init__.py" ]; then
+if [ ! -f "src/codebase_tutor/__init__.py" ]; then
     echo "📝 Creating basic package structure..."
 
     # Create __init__.py
-    cat > src/claude_pocketflow_template/__init__.py << 'EOF'
-"""Claude PocketFlow Template - A template for building AI flows with PocketFlow and Claude."""
+    cat > src/codebase_tutor/__init__.py << 'EOF'
+"""Codebase Tutor - AI-powered codebase tutor for learning and understanding code."""
 
 __version__ = "0.1.0"
 
@@ -69,15 +69,15 @@ __all__ = ["Config", "FlowDaemon", "__version__"]
 EOF
 
     # Create __about__.py
-    cat > src/claude_pocketflow_template/__about__.py << 'EOF'
+    cat > src/codebase_tutor/__about__.py << 'EOF'
 # SPDX-FileCopyrightText: 2024-present Your Name <your.email@example.com>
 # SPDX-License-Identifier: MIT
 __version__ = "0.1.0"
 EOF
 
     # Create basic config.py
-    cat > src/claude_pocketflow_template/config.py << 'EOF'
-"""Configuration management for Claude PocketFlow Template."""
+    cat > src/codebase_tutor/config.py << 'EOF'
+"""Configuration management for Codebase Tutor."""
 
 import os
 from pathlib import Path
@@ -116,8 +116,8 @@ class Config(BaseSettings):
 EOF
 
     # Create basic daemon.py
-    cat > src/claude_pocketflow_template/daemon.py << 'EOF'
-"""Main daemon for Claude PocketFlow Template."""
+    cat > src/codebase_tutor/daemon.py << 'EOF'
+"""Main daemon for Codebase Tutor."""
 
 import asyncio
 from typing import Any, Dict, Optional
@@ -213,12 +213,12 @@ uv run ruff check . --fix || true
 uv run pyright || true
 
 echo ""
-echo "✅ Setup complete! Your Claude PocketFlow Template is ready."
+echo "✅ Setup complete! Your Codebase Tutor is ready."
 echo ""
 echo "Next steps:"
 echo "1. Copy .env.example to .env and configure your API keys"
 echo "2. Activate the virtual environment: source .venv/bin/activate"
-echo "3. Start building your flows in src/claude_pocketflow_template/"
+echo "3. Start building your flows in src/codebase_tutor/"
 echo "4. Run tests: uv run pytest"
 echo "5. Format code: uv run ruff format ."
 echo "6. Check types: uv run pyright"

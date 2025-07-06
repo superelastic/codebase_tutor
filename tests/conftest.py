@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from claude_pocketflow_template.config import Config
+from codebase_tutor.config import Config
 
 
 @pytest.fixture(scope="session")

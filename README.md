@@ -1,23 +1,23 @@
-# claude-pocketflow-template
+# codebase-tutor
 
-A **solo developer-friendly** template for building AI-powered applications with PocketFlow and Claude. Features pragmatic tooling that helps without hindering your development flow.
+An AI-powered **codebase tutor** that helps developers understand, navigate, and learn from complex codebases. Built with PocketFlow and Claude to provide intelligent code analysis and educational guidance.
 
-> 🎯 **Philosophy**: Tools should help you build features, not fight you over formatting. This template uses a "minimal CI" approach - quality tools when you want them, never blocking your progress.
+> 🎯 **Philosophy**: Learning happens through exploration and understanding. This codebase tutor provides intelligent guidance to help developers master unfamiliar codebases through AI-powered analysis and explanations.
 
-## 🚀 Use This Template
+## 🚀 Getting Started
 
-Click the "Use this template" button above to create a new repository based on this template.
+Clone this repository and follow the setup instructions to start using the codebase tutor.
 
-**📖 New to this approach?** See **[DEVELOPMENT.md](DEVELOPMENT.md)** for the complete solo developer workflow.
+**📖 New to codebase analysis?** See **[DEVELOPMENT.md](DEVELOPMENT.md)** for the complete developer workflow.
 
 ## ✨ Features
 
-- **🚀 Solo Dev Optimized**: Tools help instead of block - no CI fatigue!
-- **🧪 Smart Testing**: Core functionality tests, skips brittle checks
-- **🔧 Pragmatic Tooling**: Ruff, Pyright, pytest - all advisory, never blocking
-- **🤖 AI Development Ready**: Optimized for Cursor AI and Claude Code
-- **⚡ Fast Iteration**: Pre-commit hooks auto-fix but won't fail commits
-- **📚 Clear Documentation**: Both technical docs and pragmatic workflow guides
+- **🧠 AI-Powered Analysis**: Intelligent code comprehension using Claude
+- **📖 Educational Guidance**: Learn codebases through structured exploration
+- **🔍 Smart Navigation**: Find patterns, dependencies, and connections
+- **🤖 Interactive Learning**: Ask questions about code structure and functionality
+- **⚡ Fast Insights**: Rapid codebase understanding and documentation
+- **📚 Knowledge Building**: Build understanding through guided exploration
 
 ## Quick Start
 
@@ -30,9 +30,9 @@ Click the "Use this template" button above to create a new repository based on t
 ### One-Command Setup
 
 ```bash
-# Clone your repository (after using template)
-git clone <your-new-repository-url>
-cd your-project-name
+# Clone the codebase tutor
+git clone https://github.com/your-username/codebase-tutor
+cd codebase-tutor
 
 # Make setup script executable (if needed)
 chmod +x setup.sh
@@ -95,7 +95,7 @@ make -f Makefile.dev check       # All quality checks (warnings only)
 
 ### Testing Philosophy
 
-This template uses **pragmatic testing** - core functionality is thoroughly tested, but brittle checks (like exact directory structure) are skipped to avoid CI fatigue.
+This application uses **pragmatic testing** - core functionality is thoroughly tested, but brittle checks (like exact directory structure) are skipped to avoid CI fatigue.
 
 ```bash
 # Run core tests (skips brittle ones automatically)
@@ -105,15 +105,15 @@ pytest
 pytest --run-skipped
 
 # Coverage is optional, not required
-pytest --cov=claude_pocketflow_template --cov-report=html
+pytest --cov=codebase_tutor --cov-report=html
 ```
 
 ## 📁 Project Structure
 
 ```
-claude-pocketflow-template/
+codebase-tutor/
 ├── src/
-│   └── claude_pocketflow_template/
+│   └── codebase_tutor/
 │       ├── __init__.py          # Package initialization
 │       ├── __about__.py         # Version information
 │       ├── config.py            # Configuration management
@@ -144,7 +144,7 @@ claude-pocketflow-template/
 
 ### For Developers
 
-- **[Developer Guide](docs/developer-guide.md)** - Complete guide to building with this template
+- **[Developer Guide](docs/developer-guide.md)** - Complete guide to building with this application
 - **[Architecture](docs/architecture.md)** - System design, patterns, and best practices
 - **[API Reference](docs/api-reference.md)** - Detailed API documentation
 - **[Flow Design](docs/flow-design.md)** - PocketFlow patterns and examples
@@ -157,7 +157,7 @@ claude-pocketflow-template/
 
 ## 🤖 AI-Assisted Development
 
-This template is optimized for AI-powered development:
+This application is optimized for AI-powered development:
 
 ### Cursor AI Integration
 
@@ -236,11 +236,11 @@ LOGS_DIR=/path/to/logs
 
 ## 📈 Roadmap
 
-- [ ] Add more flow examples
-- [ ] Implement flow visualization
-- [ ] Add performance monitoring
-- [ ] Create flow testing utilities
-- [ ] Add deployment templates (Docker, K8s)
+- [ ] Add advanced codebase analysis features
+- [ ] Implement code relationship visualization
+- [ ] Add learning progress tracking
+- [ ] Create interactive tutorials
+- [ ] Add support for multiple programming languages
 
 ## 🆘 Troubleshooting
 
@@ -277,4 +277,4 @@ uv pip install types-requests types-pyyaml
 
 ## 📄 License
 
-This template is provided as-is for use in your projects. Add your preferred license here.
+This project is provided as-is for use in your codebase analysis needs. Add your preferred license here.

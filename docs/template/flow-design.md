@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the design patterns and specifications for PocketFlow flows in the claude-pocketflow template.
+This document outlines the design patterns and specifications for PocketFlow flows in the codebase-tutor.
 
 ## Flow Architecture
 

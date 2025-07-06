@@ -1,6 +1,6 @@
 # API Reference
 
-Complete API documentation for the claude-pocketflow-template components.
+Complete API documentation for the codebase-tutor components.
 
 ## Core Components
 
@@ -9,7 +9,7 @@ Complete API documentation for the claude-pocketflow-template components.
 Configuration management with environment variable support.
 
 ```python
-from claude_pocketflow_template.config import Config
+from codebase_tutor.config import Config
 
 # Create with defaults from environment
 config = Config()
@@ -51,7 +51,7 @@ config = Config(
 Manages the lifecycle of multiple flows.
 
 ```python
-from claude_pocketflow_template.daemon import FlowDaemon
+from codebase_tutor.daemon import FlowDaemon
 
 daemon = FlowDaemon(config)
 
@@ -399,7 +399,7 @@ class FlowContext(TypedDict, total=False):
 uv pip install -e ".[dev]"
 
 # Run development server with hot reload
-uv run python -m claude_pocketflow_template --debug --reload
+uv run python -m codebase_tutor --debug --reload
 ```
 
 ### Production Environment
@@ -409,7 +409,7 @@ uv run python -m claude_pocketflow_template --debug --reload
 uv pip install -e .
 
 # Run with production settings
-python -m claude_pocketflow_template
+python -m codebase_tutor
 ```
 
 ## Version Information
@@ -417,7 +417,7 @@ python -m claude_pocketflow_template
 Access version information:
 
 ```python
-from claude_pocketflow_template import __version__
+from codebase_tutor import __version__
 
 print(f"Version: {__version__}")
 ```

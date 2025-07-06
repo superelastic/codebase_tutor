@@ -2,7 +2,7 @@
 
 ## Overview
 
-The claude-pocketflow-template implements a modern, production-ready architecture for building AI-powered applications with PocketFlow and Claude. The system emphasizes modularity, testability, and developer experience.
+The codebase-tutor implements a modern, production-ready architecture for building AI-powered codebase analysis applications with PocketFlow and Claude. The system emphasizes modularity, testability, and educational guidance.
 
 ## Core Architecture
 
@@ -18,9 +18,9 @@ The claude-pocketflow-template implements a modern, production-ready architectur
 ### Project Structure
 
 ```
-claude-pocketflow-template/
+codebase-tutor/
 ├── src/
-│   └── claude_pocketflow_template/
+│   └── codebase_tutor/
 │       ├── __init__.py          # Package exports
 │       ├── __about__.py         # Version management
 │       ├── config.py            # Pydantic configuration
@@ -314,7 +314,7 @@ make test
 make dev
 
 # Start application
-python -m claude_pocketflow_template
+python -m codebase_tutor
 ```
 
 ### CI/CD Pipeline

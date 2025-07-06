@@ -2,29 +2,29 @@
 
 ## Project Overview
 
-**Project Name:** claude-pocketflow
-**Type:** Template/Framework
-**Purpose:** Enable rapid development of agentic applications using AI-assisted coding tools
+**Project Name:** codebase-tutor
+**Type:** AI-Powered Learning Tool
+**Purpose:** Help developers understand and learn from complex codebases using AI-powered analysis and guidance
 
 ## Product Vision
 
-Create a standardized template that combines PocketFlow's agentic architecture with professional Python development practices, optimized for AI-assisted development using Cursor, Claude-Code, and Task-Master.
+Create an intelligent codebase tutor that combines PocketFlow's agentic architecture with AI-powered code analysis to help developers understand, navigate, and learn from complex codebases through guided exploration and educational insights.
 
 ## User Stories
 
 ### As a Developer
 
-1. I want to quickly create new agentic applications without setting up boilerplate
-2. I want clear patterns for implementing nodes and flows
-3. I want comprehensive testing built into the workflow
-4. I want AI assistants to understand my project structure
+1. I want to quickly understand unfamiliar codebases without spending hours reading documentation
+2. I want AI-powered guidance to help me navigate complex code structures
+3. I want to learn about code patterns and architectural decisions in existing projects
+4. I want intelligent explanations of how different components work together
 
 ### As an AI Assistant
 
-1. I need clear rules and patterns to follow when generating code
-2. I need to understand the project structure and conventions
-3. I need to know where to place different types of code
-4. I need testing requirements to ensure code quality
+1. I need to analyze codebase structure and provide meaningful insights
+2. I need to identify key architectural patterns and code relationships
+3. I need to provide educational explanations about code functionality
+4. I need to guide developers through complex code exploration
 
 ## Functional Requirements
 

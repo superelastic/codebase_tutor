@@ -17,7 +17,7 @@ test: ## Run tests
 	uv run pytest
 
 test-cov: ## Run tests with coverage
-	uv run pytest --cov=claude_pocketflow_template --cov-report=html --cov-report=term
+	uv run pytest --cov=codebase_tutor --cov-report=html --cov-report=term
 
 lint: ## Run linting
 	uv run ruff check .

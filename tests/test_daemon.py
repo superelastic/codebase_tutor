@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from claude_pocketflow_template.daemon import FlowDaemon
+from codebase_tutor.daemon import FlowDaemon
 
 
 class MockFlow:
@@ -147,9 +147,14 @@ class TestFlowDaemonLifecycle:
         daemon = FlowDaemon(test_config)
         daemon._initialize_flows = AsyncMock()
 
-        # Mock sleep to raise KeyboardInterrupt
+        # Start daemon
+        await daemon.start()
+
+        # Mock sleep to raise KeyboardInterrupt in the running loop
         with patch("asyncio.sleep", side_effect=KeyboardInterrupt):
-            await daemon.start()
+            # Wait for the task to complete (it should handle the interrupt)
+            if daemon._task:
+                await daemon._task
 
         assert daemon._running is False
 
@@ -256,9 +261,10 @@ class TestFlowDaemonWithFlows:
 class TestFlowDaemonLogging:
     """Test daemon logging behavior."""
 
-    @patch("claude_pocketflow_template.daemon.logger")
-    def test_add_flow_logging(self, mock_logger, test_config):
+    @patch("logging.getLogger")
+    def test_add_flow_logging(self, mock_get_logger, test_config):
         """Test that adding flows is logged."""
+        mock_logger = mock_get_logger.return_value
         daemon = FlowDaemon(test_config)
         mock_flow = MockFlow()
 
@@ -266,9 +272,10 @@ class TestFlowDaemonLogging:
 
         mock_logger.info.assert_called_with("Added flow: test_flow")
 
-    @patch("claude_pocketflow_template.daemon.logger")
-    def test_remove_flow_logging(self, mock_logger, test_config):
+    @patch("logging.getLogger")
+    def test_remove_flow_logging(self, mock_get_logger, test_config):
         """Test that removing flows is logged."""
+        mock_logger = mock_get_logger.return_value
         daemon = FlowDaemon(test_config)
         mock_flow = MockFlow()
 
@@ -280,9 +287,10 @@ class TestFlowDaemonLogging:
         assert any("Added flow: test_flow" in str(call) for call in calls)
         assert any("Removed flow: test_flow" in str(call) for call in calls)
 
-    @patch("claude_pocketflow_template.daemon.logger")
-    async def test_daemon_start_logging(self, mock_logger, test_config):
+    @patch("logging.getLogger")
+    async def test_daemon_start_logging(self, mock_get_logger, test_config):
         """Test that daemon start is logged."""
+        mock_logger = mock_get_logger.return_value
         daemon = FlowDaemon(test_config)
         daemon._initialize_flows = AsyncMock()
 
@@ -297,9 +305,10 @@ class TestFlowDaemonLogging:
         except asyncio.TimeoutError:
             start_task.cancel()
 
-    @patch("claude_pocketflow_template.daemon.logger")
-    async def test_daemon_stop_logging(self, mock_logger, test_config):
+    @patch("logging.getLogger")
+    async def test_daemon_stop_logging(self, mock_get_logger, test_config):
         """Test that daemon stop is logged."""
+        mock_logger = mock_get_logger.return_value
         daemon = FlowDaemon(test_config)
         daemon._initialize_flows = AsyncMock()
 
@@ -314,11 +323,12 @@ class TestFlowDaemonLogging:
         except asyncio.TimeoutError:
             start_task.cancel()
 
-    @patch("claude_pocketflow_template.daemon.logger")
-    async def test_flow_initialization_logging(self, mock_logger, test_config):
+    @patch("logging.getLogger")
+    async def test_flow_initialization_logging(self, mock_get_logger, test_config):
         """Test that flow initialization is logged."""
+        mock_logger = mock_get_logger.return_value
         daemon = FlowDaemon(test_config)
-        daemon._initialize_flows = AsyncMock()
+        # Don't mock _initialize_flows so the real implementation runs and logs
 
         start_task = asyncio.create_task(daemon.start())
         await asyncio.sleep(0.1)

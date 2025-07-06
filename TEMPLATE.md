@@ -1,10 +1,10 @@
-# Claude PocketFlow Template - Usage Guide
+# Codebase Tutor - Usage Guide
 
 ## 🚀 Quick Start
 
-This template provides a production-ready foundation for building AI-powered applications with PocketFlow and Claude.
+This application provides a production-ready foundation for AI-powered codebase analysis and learning with PocketFlow and Claude.
 
-### Using This Template
+### Using This Application
 
 1. **Create Your Repository**
    - Click the "Use this template" button on GitHub
@@ -58,7 +58,7 @@ After creating your repository from this template:
 ### Essential Updates
 
 - [ ] Update `pyproject.toml`:
-  - [ ] Change `name` from "claude-pocketflow-template"
+  - [ ] Change `name` from "codebase-tutor"
   - [ ] Update `description`
   - [ ] Modify `authors` with your information
   - [ ] Update repository URLs
@@ -75,11 +75,11 @@ After creating your repository from this template:
 - [ ] Rename the package:
 
   ```bash
-  # Rename src/claude_pocketflow_template to your package name
-  mv src/claude_pocketflow_template src/your_package_name
+  # Rename src/codebase_tutor to your package name
+  mv src/codebase_tutor src/your_package_name
 
   # Update imports in tests
-  find tests -type f -name "*.py" -exec sed -i 's/claude_pocketflow_template/your_package_name/g' {} +
+  find tests -type f -name "*.py" -exec sed -i 's/codebase_tutor/your_package_name/g' {} +
   ```
 
 - [ ] Create your first flow:
@@ -204,7 +204,7 @@ Set up contribution guidelines:
 ### PocketFlow Development
 
 - Review example flows in `tests/test_flows.py`
-- Study the FlowDaemon pattern in `src/claude_pocketflow_template/daemon.py`
+- Study the FlowDaemon pattern in `src/codebase_tutor/daemon.py`
 - Check PocketFlow documentation for advanced patterns
 
 ### AI-Assisted Development

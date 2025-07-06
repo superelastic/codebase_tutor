@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "claude-pocketflow-template"
+name = "codebase-tutor"
 dynamic = ["version"]
-description = "A template for building AI flows with PocketFlow and Claude"
+description = "AI-powered codebase tutor for learning and understanding code"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
-keywords = ["ai", "pocketflow", "claude", "template"]
+keywords = ["ai", "pocketflow", "claude", "codebase", "tutor", "learning"]
 authors = [
     { name = "Your Name", email = "your.email@example.com" },
 ]
@@ -49,7 +49,7 @@ Issues = "https://github.com/yourusername/claude-pocketflow-template/issues"
 Source = "https://github.com/yourusername/claude-pocketflow-template"
 
 [tool.hatch.version]
-path = "src/claude_pocketflow_template/__about__.py"
+path = "src/codebase_tutor/__about__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -79,7 +79,7 @@ dependencies = [
 ]
 
 [tool.hatch.envs.lint.scripts]
-typing = "pyright {args:src/claude_pocketflow_template tests}"
+typing = "pyright {args:src/codebase_tutor tests}"
 style = [
     "ruff check {args:.}",
     "ruff format --check --diff {args:.}",
@@ -142,7 +142,7 @@ unfixable = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["claude_pocketflow_template"]
+known-first-party = ["codebase_tutor"]
 
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
@@ -152,16 +152,16 @@ ban-relative-imports = "all"
 "tests/**/*" = ["PLR2004", "S101", "TID252"]
 
 [tool.coverage.run]
-source_pkgs = ["claude_pocketflow_template", "tests"]
+source_pkgs = ["codebase_tutor", "tests"]
 branch = true
 parallel = true
 omit = [
-    "src/claude_pocketflow_template/__about__.py",
+    "src/codebase_tutor/__about__.py",
 ]
 
 [tool.coverage.paths]
-claude_pocketflow_template = ["src/claude_pocketflow_template", "*/claude-pocketflow-template/src/claude_pocketflow_template"]
-tests = ["tests", "*/claude-pocketflow-template/tests"]
+codebase_tutor = ["src/codebase_tutor", "*/codebase-tutor/src/codebase_tutor"]
+tests = ["tests", "*/codebase-tutor/tests"]
 
 [tool.coverage.report]
 exclude_lines = [
@@ -177,7 +177,7 @@ addopts = [
     "--strict-markers",
     "--strict-config",
     # Coverage is optional for solo development
-    # "--cov=claude_pocketflow_template",
+    # "--cov=codebase_tutor",
     # "--cov-report=term-missing",
     # "--cov-fail-under=80",
 ]
@@ -186,9 +186,16 @@ asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
 
 [tool.pyright]
-include = ["src/claude_pocketflow_template", "tests"]
+include = ["src/codebase_tutor", "tests"]
 exclude = [".venv", "build", "dist"]
 reportMissingImports = true
 reportMissingTypeStubs = false
 pythonVersion = "3.10"
 pythonPlatform = "All"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.0.0",
+    "pytest-cov>=6.2.1",
+]

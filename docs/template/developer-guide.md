@@ -1,10 +1,10 @@
 # Developer Guide
 
-This comprehensive guide explains how to build AI-powered applications using the claude-pocketflow-template.
+This comprehensive guide explains how to build AI-powered codebase analysis applications using the codebase-tutor.
 
 ## Overview
 
-The claude-pocketflow-template provides a production-ready foundation for building AI applications with:
+The codebase-tutor provides a production-ready foundation for building AI-powered codebase analysis applications with:
 
 - **PocketFlow**: Node-based flow orchestration framework
 - **Modern Python Tooling**: UV, Ruff, Pyright, pytest
@@ -85,7 +85,7 @@ After running the setup script, you'll have the following structure automaticall
 ### Core Components
 
 ```
-src/claude_pocketflow_template/
+src/codebase_tutor/
 ├── __init__.py          # Package exports
 ├── __about__.py         # Version info
 ├── config.py            # Configuration management
@@ -99,7 +99,7 @@ src/claude_pocketflow_template/
 The template uses Pydantic for robust configuration:
 
 ```python
-from claude_pocketflow_template.config import Config
+from codebase_tutor.config import Config
 
 # Load from environment variables
 config = Config()
@@ -117,8 +117,8 @@ config = Config(
 The FlowDaemon manages your application's flows:
 
 ```python
-from claude_pocketflow_template.daemon import FlowDaemon
-from claude_pocketflow_template.config import Config
+from codebase_tutor.daemon import FlowDaemon
+from codebase_tutor.config import Config
 
 async def main():
     config = Config()
@@ -194,7 +194,7 @@ class ProcessNode(Node):
 
 ```python
 from anthropic import AsyncAnthropic
-from claude_pocketflow_template.config import Config
+from codebase_tutor.config import Config
 
 class ClaudeNode(Node):
     """A node that interacts with Claude."""
@@ -235,8 +235,8 @@ The template includes comprehensive testing examples:
 
 ```python
 import pytest
-from claude_pocketflow_template.daemon import FlowDaemon
-from claude_pocketflow_template.config import Config
+from codebase_tutor.daemon import FlowDaemon
+from codebase_tutor.config import Config
 
 @pytest.fixture
 def test_config():
@@ -470,7 +470,7 @@ RUN uv pip install -e .
 RUN pip install pocketflow
 
 # Run the application
-CMD ["python", "-m", "claude_pocketflow_template"]
+CMD ["python", "-m", "codebase_tutor"]
 ```
 
 ### Monitoring and Observability

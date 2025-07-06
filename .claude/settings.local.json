@@ -1,6 +1,21 @@
 {
-  "enableAllProjectMcpServers": false,
   "permissions": {
-    "allow": ["WebFetch(domain:raw.githubusercontent.com)"]
-  }
+    "allow": [
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(uv pip install:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run ruff format:*)",
+      "Bash(uv run ruff check:*)",
+      "Bash(uv run:*)",
+      "Bash(uv add:*)",
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "Bash(tree:*)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": false
 }
