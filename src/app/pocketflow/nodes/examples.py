@@ -3,7 +3,7 @@
 import random
 from typing import Any
 
-from src.nodes.base import BaseNode, ValidationMixin
+from src.app.pocketflow.nodes.base import BaseNode, ValidationMixin
 
 
 class GreetingNode(BaseNode, ValidationMixin):

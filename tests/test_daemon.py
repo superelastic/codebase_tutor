@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from codebase_tutor.daemon import FlowDaemon
+from src.app.daemon import FlowDaemon
 
 
 class MockFlow:

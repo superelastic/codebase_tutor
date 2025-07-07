@@ -9,7 +9,7 @@ from pathlib import Path
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.flows.examples import (
+from src.app.pocketflow.flows.examples import (
     data_pipeline_flow,
     greeting_flow,
     random_conditional_flow,

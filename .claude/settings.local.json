@@ -14,7 +14,9 @@
       "Bash(mv:*)",
       "Bash(tree:*)",
       "Bash(git commit:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)"
     ]
   },
   "enableAllProjectMcpServers": false

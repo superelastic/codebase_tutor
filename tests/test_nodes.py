@@ -1,6 +1,6 @@
 """Tests for example nodes."""
 
-from src.nodes.examples import (
+from src.app.pocketflow.nodes.examples import (
     ConditionalNode,
     DataTransformNode,
     GreetingNode,

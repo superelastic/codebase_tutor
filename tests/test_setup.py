@@ -9,10 +9,10 @@ import pytest
 def test_imports():
     """Test that all core modules can be imported."""
     # These imports should not raise any errors
-    import src.flows.base  # noqa: PLC0415
-    import src.flows.examples  # noqa: PLC0415
-    import src.nodes.base  # noqa: PLC0415
-    import src.nodes.examples  # noqa: PLC0415, F401
+    import src.app.pocketflow.flows.base  # noqa: PLC0415
+    import src.app.pocketflow.flows.examples  # noqa: PLC0415
+    import src.app.pocketflow.nodes.base  # noqa: PLC0415
+    import src.app.pocketflow.nodes.examples  # noqa: PLC0415, F401
 
     assert True  # If we get here, imports worked
 

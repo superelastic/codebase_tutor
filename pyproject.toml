@@ -2,6 +2,9 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/app"]
+
 [project]
 name = "codebase-tutor"
 dynamic = ["version"]
@@ -49,7 +52,7 @@ Issues = "https://github.com/yourusername/claude-pocketflow-template/issues"
 Source = "https://github.com/yourusername/claude-pocketflow-template"
 
 [tool.hatch.version]
-path = "src/codebase_tutor/__about__.py"
+path = "src/app/__about__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -79,7 +82,7 @@ dependencies = [
 ]
 
 [tool.hatch.envs.lint.scripts]
-typing = "pyright {args:src/codebase_tutor tests}"
+typing = "pyright {args:src/app tests}"
 style = [
     "ruff check {args:.}",
     "ruff format --check --diff {args:.}",
@@ -142,7 +145,7 @@ unfixable = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["codebase_tutor"]
+known-first-party = ["app"]
 
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
@@ -152,15 +155,15 @@ ban-relative-imports = "all"
 "tests/**/*" = ["PLR2004", "S101", "TID252"]
 
 [tool.coverage.run]
-source_pkgs = ["codebase_tutor", "tests"]
+source_pkgs = ["app", "tests"]
 branch = true
 parallel = true
 omit = [
-    "src/codebase_tutor/__about__.py",
+    "src/app/__about__.py",
 ]
 
 [tool.coverage.paths]
-codebase_tutor = ["src/codebase_tutor", "*/codebase-tutor/src/codebase_tutor"]
+app = ["src/app", "*/codebase-tutor/src/app"]
 tests = ["tests", "*/codebase-tutor/tests"]
 
 [tool.coverage.report]
@@ -177,7 +180,7 @@ addopts = [
     "--strict-markers",
     "--strict-config",
     # Coverage is optional for solo development
-    # "--cov=codebase_tutor",
+    # "--cov=app",
     # "--cov-report=term-missing",
     # "--cov-fail-under=80",
 ]
@@ -186,7 +189,7 @@ asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
 
 [tool.pyright]
-include = ["src/codebase_tutor", "tests"]
+include = ["src/app", "tests"]
 exclude = [".venv", "build", "dist"]
 reportMissingImports = true
 reportMissingTypeStubs = false

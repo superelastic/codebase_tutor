@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from codebase_tutor.config import Config
+from src.app.config import Config
 
 
 class TestConfigBasics:

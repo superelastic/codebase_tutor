@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 import pytest
 
-from src.flows.base import BaseFlow, FlowNode
-from src.flows.examples import (
+from src.app.pocketflow.flows.base import BaseFlow, FlowNode
+from src.app.pocketflow.flows.examples import (
     data_pipeline_flow,
     greeting_flow,
     random_conditional_flow,
 )
-from src.nodes.base import BaseNode
-from src.nodes.examples import GreetingNode
+from src.app.pocketflow.nodes.base import BaseNode
+from src.app.pocketflow.nodes.examples import GreetingNode
 
 
 class TestBaseFlow:

@@ -1,7 +1,7 @@
 """Example flow implementations."""
 
-from src.flows.base import BaseFlow, FlowNode
-from src.nodes.examples import (
+from src.app.pocketflow.flows.base import BaseFlow, FlowNode
+from src.app.pocketflow.nodes.examples import (
     ConditionalNode,
     DataTransformNode,
     GreetingNode,

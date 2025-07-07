@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from codebase_tutor.config import Config
+from src.app.config import Config
 
 
 @pytest.fixture(scope="session")
